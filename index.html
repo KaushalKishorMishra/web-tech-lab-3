@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch User Details with Github</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- axios cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <!-- lord icon cdn link -->
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
+
+    <!-- font-awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- particlesJS cdn  -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+
+    <div id="particles-js" class="w-100 h-100 position-absolute top-0 start-0 overflow-hidden bg-dark"></div>
+    <!-- total no. of api callings  -->
+    <div id="api_calling" class="text-warning position-fixed top-0 end-0 text-center rounded-bottom-5 bg-danger fs-5 p-3"></div>
+
+    <!-- user search form -->
+    <div class="section">
+        <div class="w-100" id="search_form">
+            <h2 class="title">
+                Search For
+                " <i class="fa-brands fa-github fa-beat text-info"></i> "
+                User
+            </h2>
+            <form onsubmit="searchUser(); return false">
+                <input type="text" class="form-control w-100 rounded-5 px-4" id="search_bar" >
+                <button>
+                    <lord-icon src="https://cdn.lordicon.com/zniqnylq.json" trigger="hover" class="search-icon"
+                        colors="primary:#4be1ec,secondary:#cb5eee">
+                    </lord-icon>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- user details display -->
+    <div class="section user-details scale-up-hor-left fs-6 rounded-5 p-5 my-4 mx-auto" id="user_detail">
+        <h2 class="title">User Details on <i class="fa-brands fa-github fa-beat text-info"></i></h2>
+        <div class="user-avatar">
+            <img id="user_avatar_url" class="avatar img-thumbnail d-flex rounded-circle btn-outline-light bg-dark border-3"></img>
+        </div>
+        <div class="user-login">
+            <div class="fs-5 fw-bolder"> User ID:</div>
+            <span id="user_login" class="fs-6 fw-medium"></span>
+        </div>
+        <div class="user-name">
+            <div class="fs-5 fw-bolder"> User Name:</div>
+            <span id="user_name" class="fs-6 fw-medium"></span>
+        </div>
+        <div class="user-address">
+            <div class="fs-5 fw-bolder">
+                User Address:
+            </div>
+            <span id="user_address" class="fs-6 fw-medium"></span>
+        </div>
+        <div class="user-github-profile">
+            <div class="fs-5 fw-bolder"> Github URL:</div>
+            <a id="user_github_html_url" target="_blank" class="fs-6 fw-medium text-light"></a>
+        </div>
+        <div class="user-public-repos">
+            <div class="fs-5 fw-bolder"> Public Repos:</div>
+            <span id="user_public_repos" class="fs-6 fw-medium"></span>
+        </div>
+    </div>
+
+    <!-- error display -->
+    <div id="error_message" class="bg-danger p-3 rounded-5 scale-up-ver-bottom scale-up-hor-left position-fixed start-0 end-0 bottom-0 w-50 text-white  ">
+    </div>
+
+    <!-- bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- particles js link -->
+    <script src="./particles.js"></script>
+    <!-- app js link -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
